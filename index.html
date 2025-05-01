@@ -1,13 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>three.js sandbox</title>
+    <title>Mobius Transform Visualization</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+      }
+      canvas {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+      }
+      #gui-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      #shape-select {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 4px;
+        z-index: 1000;
+      }
+      #shape-select option {
+        background: #fff;
+        color: #000;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <select id="shape-select">
+      <option value="grid">Grid</option>
+      <option value="circle">Circle</option>
+      <option value="line">Single Line</option>
+      <option value="parallel-vertical">Parallel Vertical Lines</option>
+      <option value="parallel-horizontal">Parallel Horizontal Lines</option>
+      <option value="parallel-diagonal">Parallel Diagonal Lines</option>
+      <option value="triangle">Triangle</option>
+      <option value="rectangle">Rectangle</option>
+    </select>
+    <div id="gui-container"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
